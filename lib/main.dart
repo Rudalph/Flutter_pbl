@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen(),
+    );
+  }
+}
 
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,16 +51,34 @@ class MyApp extends StatelessWidget {
                 height: 100,
                 width: 100,
                 color: Colors.purple,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Do's & Dont's",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.purple),
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.black)),
+                    child: Text("Go to next screen"),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => NextScreen()),
+                      );
+                    }),
               ),
             ],
           )),
     );
+  }
+}
+
+class NextScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(' Do\'s  and Donts'),
+        ),
+        body: Container(
+          child: Text("Do\'s and Dont\'s Screen "),
+        ));
   }
 }

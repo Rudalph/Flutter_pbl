@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,12 +23,12 @@ class HomeScreen extends StatelessWidget {
       home: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
-            title: Text(
+            title: const Text(
               "Dis-Man-Sym",
               style: TextStyle(color: Colors.black),
             ),
             backgroundColor: Colors.purple,
-            leading: Icon(
+            leading: const Icon(
               Icons.home,
               color: Colors.black,
             ),
@@ -34,20 +36,18 @@ class HomeScreen extends StatelessWidget {
           body: Row(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 100, left: 75),
+                margin: const EdgeInsets.only(top: 100, left: 75),
                 height: 100,
                 width: 100,
                 color: Colors.purple,
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(
-                    "Disasters",
-                    style: TextStyle(color: Colors.black),
-                  ),
+                  child: const Text("Disasters",
+                      style: TextStyle(color: Colors.black)),
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 100, left: 100),
+                margin: const EdgeInsets.only(top: 100, left: 100),
                 height: 100,
                 width: 100,
                 color: Colors.purple,
@@ -57,10 +57,11 @@ class HomeScreen extends StatelessWidget {
                             MaterialStateProperty.all(Colors.purple),
                         foregroundColor:
                             MaterialStateProperty.all(Colors.black)),
-                    child: Text("Go to next screen"),
+                    child: const Text("Do's & Dont's"),
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => NextScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => DoandDontScreen()),
                       );
                     }),
               ),
@@ -70,15 +71,14 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class NextScreen extends StatelessWidget {
+class DoandDontScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(' Do\'s  and Donts'),
+          title: const Text(' Do\'s  and Donts'),
+          backgroundColor: Colors.purple,
         ),
-        body: Container(
-          child: Text("Do\'s and Dont\'s Screen "),
-        ));
+        body: const Text("Do\'s and Dont\'s Screen "));
   }
 }

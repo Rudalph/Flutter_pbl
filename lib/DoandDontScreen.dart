@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dis_man_sym/DOandDonts/Floods.dart';
 import 'package:flutter/material.dart';
+import 'DOandDonts/EarthQuake.dart';
 
 class DoandDontScreen extends StatelessWidget {
   const DoandDontScreen({super.key});
@@ -22,7 +24,8 @@ class DoandDontScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Earthquake()),
+                      MaterialPageRoute(
+                          builder: (context) => EarthquakeScreen()),
                     );
                   },
                   child: Text("EarthQuake"),
@@ -33,7 +36,11 @@ class DoandDontScreen extends StatelessWidget {
             Container(
                 width: 300,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => FloodScreen()),
+                    );
+                  },
                   child: Text("FLOODS"),
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.purple),
@@ -77,54 +84,6 @@ class DoandDontScreen extends StatelessWidget {
                 )),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class Earthquake extends StatelessWidget {
-  const Earthquake({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(' Do\'s  and Donts'),
-        backgroundColor: Colors.purple,
-      ),
-      body: Column(
-        // ignore: prefer_const_literals_to_create_immutables
-        children: <Widget>[
-          // ignore: prefer_const_constructors
-          Center(
-              child: Text(
-            "Earthquake",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          )),
-          Container(
-            child: Text(
-                "DO'S & DONT'S:- \n\n"
-                "battery-operated flashlight with extra"
-                "powered by batteries\n radio "
-                "handbook and first-aid kit "
-                "Water and dry goods for emergencies (packed and sealed) "
-                "a waterproof container with matches and candles a knife "
-                "Tablets or powdered water filters with chlorine "
-                "open a can ."
-                "necessary medications\n"
-                "Credit cards and cash\n"
-                "hefty cords and ropes \n"
-                "sturdy footwear",
-                style: TextStyle(fontSize: 25)),
-          ),
-          TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(
-                  MaterialPageRoute(builder: (context) => Earthquake()),
-                );
-              },
-              child: Text("BACK"))
-        ],
       ),
     );
   }

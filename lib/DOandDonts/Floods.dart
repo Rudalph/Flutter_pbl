@@ -6,6 +6,8 @@ class FloodScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("FLOODS"),
+        backgroundColor: Colors.purple,
+        foregroundColor: Colors.black,
       ),
       body: ListView(
         children: <Widget>[

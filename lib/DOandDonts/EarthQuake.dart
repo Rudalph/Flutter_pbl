@@ -20,6 +20,8 @@ class EarthquakeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("EARTHQUAKE"),
+        backgroundColor: Colors.purple,
+        foregroundColor: Colors.black,
       ),
       body: ListView.builder(
         itemCount: items.length + 2,

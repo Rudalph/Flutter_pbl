@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'DoandDontScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,104 +72,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           )),
-    );
-  }
-}
-
-class DoandDontScreen extends StatelessWidget {
-  const DoandDontScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(' Do\'s  and Donts'),
-        backgroundColor: Colors.purple,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Container(
-                width: 300,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("EarthQuake"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.purple)),
-                )),
-            Container(
-                width: 300,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("FLOODS"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.purple)),
-                )),
-            Container(
-                width: 300,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("LANDSLIDES"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.purple)),
-                )),
-            Container(
-                width: 300,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("CYCLONE"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.purple)),
-                )),
-            Container(
-                width: 300,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("TSUNAMI"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.purple)),
-                )),
-            Container(
-                width: 300,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("DROUGHT"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.purple)),
-                )),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Earthquake extends StatelessWidget {
-  const Earthquake({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(' Do\'s  and Donts'),
-        backgroundColor: Colors.purple,
-      ),
-      body: Column(
-        children: <Widget>[
-          Center(
-              child: Text(
-            "Earthquake",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-          )),
-        ],
-      ),
     );
   }
 }

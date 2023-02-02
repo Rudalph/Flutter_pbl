@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:dis_man_sym/DisastersScreen.dart';
 import 'package:flutter/material.dart';
 import 'DoandDontScreen.dart';
 
@@ -46,7 +47,12 @@ class HomeScreen extends StatelessWidget {
                 width: 100,
                 color: Colors.purple,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => DisastersScreen()),
+                    );
+                  },
                   child: const Text("Disasters",
                       style: TextStyle(color: Colors.black)),
                 ),

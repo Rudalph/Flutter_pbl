@@ -21,7 +21,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<void> getWeatherData() async {
     String url =
-        'http://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=$apiKey&units=metric';
+        'http://api.openweathermap.org/data/2.5/weather?q=Singapore&appid=$apiKey&units=metric';
     Uri uri = Uri.parse(url);
 
     var response = await http.get(uri);
@@ -63,7 +63,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       color: Colors.white70,
                     ),
                     child: Icon(
-                      FontAwesomeIcons.temperatureHigh,
+                      Icons.cloud,
                       size: 100,
                       color: Colors.blue[900],
                     ),
@@ -101,6 +101,29 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       color: Colors.black,
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  weatherData['rain'] == null
+                      ? Text(
+                          'Rain: Not available',
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        )
+                      : Text(
+                          'Rain: ${weatherData['rain']['1h']}mm',
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
                   SizedBox(
                     height: 20,
                   ),

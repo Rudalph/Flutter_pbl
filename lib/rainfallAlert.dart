@@ -11,7 +11,7 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   String apiKey = '54a4215d65eb60a2a0c49c14c289a227';
-  String city = "Paris";
+  String city = "Mumbai";
   dynamic weatherData;
 
   @override

@@ -18,8 +18,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   Future<void> getWeatherData() async {
-    var response = await http.get(
-        'http://api.openweathermap.org/data/2.5/weather?q=London&appid=$apiKey');
+    String url =
+        'http://api.openweathermap.org/data/2.5/weather?q=London&appid=$apiKey';
+    Uri uri = Uri.parse(url);
+// Now you can pass the `uri` object to a function or method that expects a `Uri`.
+
+    var response = await http.get(uri);
     if (response.statusCode == 200) {
       setState(() {
         weatherData = json.decode(response.body);

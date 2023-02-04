@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:dis_man_sym/DisastersScreen.dart';
+import 'package:dis_man_sym/rainfallAlert.dart';
 import 'package:flutter/material.dart';
 import 'DoandDontScreen.dart';
 
@@ -40,6 +41,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
                 children: [
@@ -80,7 +82,22 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              ElevatedButton(onPressed: null, child: Text("Rainfall Info"))
+              Container(
+                height: 100,
+                width: 100,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => WeatherScreen()),
+                    );
+                  },
+                  child: Text("Rainfall Info"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.purple),
+                    foregroundColor: MaterialStateProperty.all(Colors.black),
+                  ),
+                ),
+              )
             ],
           )),
     );

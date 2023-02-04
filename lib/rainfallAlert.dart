@@ -19,7 +19,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<void> getWeatherData() async {
     String url =
-        'http://api.openweathermap.org/data/2.5/weather?q=London&appid=$apiKey';
+        'http://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=$apiKey&units=metric';
     Uri uri = Uri.parse(url);
 // Now you can pass the `uri` object to a function or method that expects a `Uri`.
 

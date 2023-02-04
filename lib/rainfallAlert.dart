@@ -47,8 +47,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Colors.blue,
-                    Colors.blue,
+                    Colors.purple,
+                    Colors.purple,
                   ],
                 ),
               ),
@@ -63,7 +63,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       color: Colors.white70,
                     ),
                     child: Icon(
-                      FontAwesomeIcons.cloudSun,
+                      FontAwesomeIcons.temperatureHigh,
                       size: 100,
                       color: Colors.blue[900],
                     ),
@@ -76,7 +76,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                   SizedBox(
@@ -87,7 +87,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                   SizedBox(
@@ -98,7 +98,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                   SizedBox(
@@ -118,7 +118,31 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       child: Text(
                         'Refresh',
                         style: TextStyle(
-                          color: Colors.blue[900],
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop(
+                          MaterialPageRoute(
+                              builder: (context) => WeatherScreen()),
+                        );
+                      },
+                      child: Text(
+                        'Back',
+                        style: TextStyle(
+                          color: Colors.black,
                           fontSize: 20,
                         ),
                       ),

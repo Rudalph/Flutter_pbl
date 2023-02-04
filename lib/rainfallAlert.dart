@@ -64,7 +64,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       color: Colors.white70,
                     ),
                     child: Icon(
-                      FontAwesomeIcons.cloudSun,
+                      FontAwesomeIcons.cloudMoon,
                       size: 100,
                       color: Color.fromARGB(205, 6, 32, 161),
                     ),
@@ -128,16 +128,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   Container(
                     margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
                     width: double.infinity,
-                    height: 20,
+                    height: 30,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.blue[300],
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextButton(
                       onPressed: () {
                         Navigator.of(context).pop(
                           MaterialPageRoute(
-                              builder: (context) => WeatherScreen()),
+                            builder: (context) => WeatherScreen(),
+                          ),
                         );
                       },
                       child: Text(

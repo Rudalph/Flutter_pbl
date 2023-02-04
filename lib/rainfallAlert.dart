@@ -105,26 +105,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     height: 20,
                   ),
                   Container(
-                    width: double.infinity,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        getWeatherData();
-                      },
-                      child: Text(
-                        'Refresh',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
                     margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
                     width: double.infinity,
                     height: 50,

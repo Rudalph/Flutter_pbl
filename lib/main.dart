@@ -39,43 +39,48 @@ class HomeScreen extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          body: Row(
+          body: Column(
             children: [
-              Container(
-                margin: const EdgeInsets.only(top: 100, left: 75),
-                height: 100,
-                width: 100,
-                color: Colors.purple,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context) => DisastersScreen()),
-                    );
-                  },
-                  child: const Text("Disasters",
-                      style: TextStyle(color: Colors.black)),
-                ),
+              Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(top: 100, left: 75),
+                    height: 100,
+                    width: 100,
+                    color: Colors.purple,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => DisastersScreen()),
+                        );
+                      },
+                      child: const Text("Disasters",
+                          style: TextStyle(color: Colors.black)),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 100, left: 100),
+                    height: 100,
+                    width: 100,
+                    color: Colors.purple,
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.purple),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.black)),
+                        child: const Text("Do's & Dont's"),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => DoandDontScreen()),
+                          );
+                        }),
+                  ),
+                ],
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 100, left: 100),
-                height: 100,
-                width: 100,
-                color: Colors.purple,
-                child: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.purple),
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.black)),
-                    child: const Text("Do's & Dont's"),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => DoandDontScreen()),
-                      );
-                    }),
-              ),
+              ElevatedButton(onPressed: null, child: Text("Rainfall Info"))
             ],
           )),
     );

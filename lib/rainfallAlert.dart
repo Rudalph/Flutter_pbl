@@ -63,9 +63,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       color: Colors.white70,
                     ),
                     child: Icon(
-                      Icons.cloud,
+                      FontAwesomeIcons.cloudSun,
                       size: 100,
-                      color: Colors.blue[900],
+                      color: Color.fromARGB(205, 6, 32, 161),
                     ),
                   ),
                   SizedBox(
@@ -128,9 +128,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     height: 20,
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
                     width: double.infinity,
-                    height: 50,
+                    height: 20,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -146,7 +146,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         'Back',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 15,
                         ),
                       ),
                     ),

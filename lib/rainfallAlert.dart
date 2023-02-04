@@ -11,6 +11,7 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   String apiKey = '54a4215d65eb60a2a0c49c14c289a227';
+  String city = "Paris";
   dynamic weatherData;
 
   @override
@@ -21,7 +22,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<void> getWeatherData() async {
     String url =
-        'http://api.openweathermap.org/data/2.5/weather?q=Singapore&appid=$apiKey&units=metric';
+        'http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey&units=metric';
     Uri uri = Uri.parse(url);
 
     var response = await http.get(uri);
@@ -100,9 +101,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
                   ),
                   SizedBox(
                     height: 20,

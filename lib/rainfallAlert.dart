@@ -21,7 +21,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<void> getWeatherData() async {
     String url =
-        'http://api.openweathermap.org/data/2.5/weather?q=London&appid=$apiKey&units=metric';
+        'http://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=$apiKey&units=metric';
     Uri uri = Uri.parse(url);
 
     var response = await http.get(uri);

@@ -164,7 +164,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => WeatherForecastScreen(),
+                            builder: (context) => MyApp(),
                           ),
                         );
                       },

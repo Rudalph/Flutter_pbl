@@ -33,7 +33,7 @@ class DisasterFloodScreen extends StatelessWidget {
                       ),
                     );
                   default:
-                    return null;
+                    return Text(".");
                 }
               },
             ),

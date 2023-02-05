@@ -5,8 +5,7 @@ class alerts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold
-    (
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
         leading: Icon(Icons.add_alert_sharp),

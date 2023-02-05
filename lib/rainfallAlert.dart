@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'weatherforecast.dart';
 
 class WeatherScreen extends StatefulWidget {
   @override
@@ -39,6 +40,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Weather Information'),
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: weatherData == null
           ? Center(
               child: CircularProgressIndicator(),
@@ -79,10 +94,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
-                      
                     ),
                   ),
-                  
                   SizedBox(
                     height: 20,
                   ),
@@ -104,7 +117,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
-              
                   ),
                   SizedBox(
                     height: 20,
@@ -139,14 +151,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.of(context).pop(
+                        Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => WeatherScreen(),
+                            builder: (context) => MyApp(),
                           ),
                         );
                       },
                       child: Text(
-                        'Back',
+                        'Weather Forecast',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 15,
@@ -155,12 +167,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     ),
                   ),
                 ],
-              
               ),
             ),
-
-           
-            
     );
   }
 }

@@ -33,7 +33,6 @@ class HomeScreen extends StatelessWidget {
             "Dis-Man-Sym",
             style: TextStyle(color: Colors.black),
           ),
-<<<<<<< Updated upstream
           backgroundColor: Colors.purple,
           leading: const Icon(
             Icons.home,
@@ -125,90 +124,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-=======
-          body: Row(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 100, left: 75),
-                        height: 100,
-                        width: 100,
-                        color: Colors.purple,
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) => DisastersScreen()),
-                            );
-                          },
-                          child: const Text("Disasters",
-                              style: TextStyle(color: Colors.black)),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 100, left: 100),
-                        height: 100,
-                        width: 100,
-                        color: Colors.purple,
-                        child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.purple),
-                                foregroundColor:
-                                    MaterialStateProperty.all(Colors.black)),
-                            child: const Text("Do's & Dont's"),
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) => DoandDontScreen()),
-                              );
-                            }),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    height: 100,
-                    width: 100,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => WeatherScreen()),
-                        );
-                      },
-                      child: Text("weather Info"),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.purple),
-                        foregroundColor: MaterialStateProperty.all(Colors.black),
-                      ),
-                    ),
-                  ),
-
-                  Container(
-                        height: 100,
-                        width: 100,
-                        color: Colors.purple,
-                        child: TextButton(
-                          child: Text("Alerts", style: TextStyle(color: Colors.black),),
-                          onPressed: () {
-                             Navigator.push(context, MaterialPageRoute(builder: (context)=>alerts()))
-                             ;
-                          },
-                        ),
-                      ),
-                        
-                ],
-                 
-              ),
-            ],
-          )
-          
-          ),
->>>>>>> Stashed changes
     );
   }
 }

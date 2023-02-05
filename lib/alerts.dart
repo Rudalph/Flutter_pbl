@@ -8,7 +8,14 @@ class alerts extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        leading: Icon(Icons.add_alert_sharp),
+        leading: IconButton
+        (
+          icon: Icon(Icons.arrow_back, color: Colors.black,) ,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:dis_man_sym/alerts.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -78,8 +79,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
+                      
                     ),
                   ),
+                  
                   SizedBox(
                     height: 20,
                   ),
@@ -101,6 +104,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
+              
                   ),
                   SizedBox(
                     height: 20,
@@ -150,8 +154,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     ),
                   ),
                 ],
+              
               ),
             ),
+
+           
+            
     );
   }
 }

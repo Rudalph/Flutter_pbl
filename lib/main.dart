@@ -2,6 +2,7 @@ import 'package:dis_man_sym/DisastersScreen.dart';
 import 'package:dis_man_sym/rainfallAlert.dart';
 import 'package:flutter/material.dart';
 import 'DoandDontScreen.dart';
+import 'alerts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -95,9 +96,27 @@ class HomeScreen extends StatelessWidget {
                     foregroundColor: MaterialStateProperty.all(Colors.black),
                   ),
                 ),
-              )
+              ),
+
+              Container(
+                    margin: const EdgeInsets.only(top: 100, left: 75),
+                    height: 100,
+                    width: 100,
+                    color: Colors.purple,
+                    child: TextButton(
+                      child: Text("Alerts", style: TextStyle(color: Colors.black),),
+                      onPressed: () {
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>alerts()))
+                         ;
+                      },
+                    ),
+                  ),
+                    
             ],
-          )),
+             
+          )
+          
+          ),
     );
   }
 }

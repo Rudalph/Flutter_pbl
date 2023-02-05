@@ -64,7 +64,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       color: Colors.white70,
                     ),
                     child: Icon(
-                      FontAwesomeIcons.cloudMoon,
+                      FontAwesomeIcons.sun,
                       size: 100,
                       color: Color.fromARGB(205, 6, 32, 161),
                     ),

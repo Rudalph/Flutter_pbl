@@ -1,3 +1,4 @@
+import 'package:dis_man_sym/DOandDonts/helpline.dart';
 import 'package:flutter/material.dart';
 
 
@@ -62,7 +63,9 @@ class alerts extends StatelessWidget {
                             (
                               onPressed: () 
                               {
-                                
+                                  Navigator.of(context).push(
+                                 MaterialPageRoute(builder: (context) => helpline()),
+                                 );
                               },
                               child: Text("HELPLINE"),
                               style: ElevatedButton.styleFrom

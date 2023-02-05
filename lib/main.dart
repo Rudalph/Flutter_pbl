@@ -43,6 +43,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     margin: const EdgeInsets.only(top: 100, left: 75),
@@ -90,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => WeatherScreen()),
                     );
                   },
-                  child: Text("Rainfall Info"),
+                  child: Text("weather Info"),
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.purple),
                     foregroundColor: MaterialStateProperty.all(Colors.black),

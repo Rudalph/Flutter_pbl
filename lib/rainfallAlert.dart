@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'weatherforecast.dart';
 
 class WeatherScreen extends StatefulWidget {
   @override
@@ -79,10 +80,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
-                      
                     ),
                   ),
-                  
                   SizedBox(
                     height: 20,
                   ),
@@ -104,7 +103,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
-              
                   ),
                   SizedBox(
                     height: 20,
@@ -154,13 +152,34 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       ),
                     ),
                   ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
+                    width: double.infinity,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.blue[300],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => WeatherForecastScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Weather Forecast',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
-              
               ),
             ),
-
-           
-            
     );
   }
 }

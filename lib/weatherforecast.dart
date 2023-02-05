@@ -31,6 +31,15 @@ class _MyAppState extends State<MyApp> {
           title: Text('Weather Forecast'),
           backgroundColor: Colors.purple,
           foregroundColor: Colors.black,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
         ),
         body: weatherData == null
             ? Center(
@@ -59,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                   return ListTile(
                     leading: Icon(
                       iconData,
-                      color: Colors.yellow,
+                      color: Colors.yellowAccent,
                     ),
                     title: Text(
                         '${weatherData[index]['weather'][0]['description']}'),

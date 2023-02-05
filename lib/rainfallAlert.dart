@@ -40,6 +40,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Weather Information'),
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: weatherData == null
           ? Center(
               child: CircularProgressIndicator(),
@@ -126,31 +140,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         ),
                   SizedBox(
                     height: 20,
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
-                    width: double.infinity,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.blue[300],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop(
-                          MaterialPageRoute(
-                            builder: (context) => WeatherScreen(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        'Back',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
                   ),
                   Container(
                     margin: EdgeInsets.fromLTRB(25, 10, 25, 10),

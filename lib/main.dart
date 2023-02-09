@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
     return MaterialApp(
       title: "Disaster Management System",
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white38,
         appBar: AppBar(
           title: const Text(
             "Dis-Man-Sym",
@@ -41,85 +41,88 @@ class HomeScreen extends StatelessWidget {
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 100, left: 75),
-                  height: 100,
-                  width: 100,
-                  color: Colors.purple,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => DisastersScreen()),
-                      );
-                    },
-                    child: const Text("Disasters",
-                        style: TextStyle(color: Colors.black)),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 100, left: 100),
-                  height: 100,
-                  width: 100,
-                  color: Colors.purple,
-                  child: ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.purple),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.black)),
-                      child: const Text("Do's & Dont's"),
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => DoandDontScreen()),
-                        );
-                      }),
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
+              width: double.infinity,
+              height: 30,
+              decoration: BoxDecoration(
+                color: Colors.blue[300],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.purple),
+                    foregroundColor: MaterialStateProperty.all(Colors.black)),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => DisastersScreen()),
+                  );
+                },
+                child: const Text("Disasters",
+                    style: TextStyle(color: Colors.black)),
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 100, left: 75),
-                  height: 100,
-                  width: 100,
-                  color: Colors.purple,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => WeatherScreen()),
-                      );
-                    },
-                    child: const Text("Weather info",
-                        style: TextStyle(color: Colors.black)),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 100, left: 100),
-                  height: 100,
-                  width: 100,
-                  color: Colors.purple,
-                  child: ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.purple),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.black)),
-                      child: const Text("Alerts"),
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => alerts()),
-                        );
-                      }),
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
+              width: double.infinity,
+              height: 30,
+              decoration: BoxDecoration(
+                color: Colors.blue[300],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.purple),
+                      foregroundColor: MaterialStateProperty.all(Colors.black)),
+                  child: const Text("Do's & Dont's"),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => DoandDontScreen()),
+                    );
+                  }),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
+              width: double.infinity,
+              height: 30,
+              decoration: BoxDecoration(
+                color: Colors.blue[300],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.purple),
+                    foregroundColor: MaterialStateProperty.all(Colors.black)),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => WeatherScreen()),
+                  );
+                },
+                child: const Text("Weather info",
+                    style: TextStyle(color: Colors.black)),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
+              width: double.infinity,
+              height: 30,
+              decoration: BoxDecoration(
+                color: Colors.blue[300],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.purple),
+                      foregroundColor: MaterialStateProperty.all(Colors.black)),
+                  child: const Text("Alerts"),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => alerts()),
+                    );
+                  }),
             ),
           ],
         ),

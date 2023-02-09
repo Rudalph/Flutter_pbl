@@ -23,22 +23,33 @@ class EarthquakeScreen extends StatelessWidget {
         backgroundColor: Colors.purple,
         foregroundColor: Colors.black,
       ),
-      body: ListView.builder(
-        itemCount: items.length + 2,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return SizedBox(height: 20);
-          } else if (index == 1) {
-            return Text("DO and DONT:", style: TextStyle(fontSize: 25));
-          } else {
-            return Column(
-              children: [
-                SizedBox(height: 20),
-                Text(items[index - 2], style: TextStyle(fontSize: 25)),
-              ],
-            );
-          }
-        },
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'DO and DONT:',
+              style: TextStyle(
+                fontSize: 25,
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      SizedBox(height: 20),
+                      Text(items[index], style: TextStyle(fontSize: 25)),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

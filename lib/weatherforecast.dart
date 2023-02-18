@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'weatherapi.dart';
 import 'package:intl/intl.dart';
 
-class MyApp extends StatefulWidget {
+class Weatherforecast extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<Weatherforecast> {
   dynamic weatherData;
 
   @override

@@ -46,16 +46,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
             )
           : Container(
               width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Colors.purple,
-                    Colors.purple,
-                  ],
-                ),
-              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

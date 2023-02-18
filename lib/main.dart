@@ -34,6 +34,16 @@ class HomeScreen extends StatelessWidget {
         foregroundColor: Colors.black,
       ),
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Colors.purple,
+              Colors.blue,
+            ],
+          ),
+        ),
         child: Column(
           children: [
             WeatherScreen(),
@@ -115,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (context) => Weatherforecast()),
+                              builder: (context) => WeatherForecast()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

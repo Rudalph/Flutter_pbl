@@ -62,8 +62,8 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.purple,
-                        onPrimary: Colors.black,
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.purple,
                         textStyle: TextStyle(fontSize: 20.0),
                       ),
                       icon: Icon(Icons.warning),
@@ -83,8 +83,8 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.purple,
-                        onPrimary: Colors.black,
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.purple,
                         textStyle: TextStyle(fontSize: 20.0),
                       ),
                       icon: Icon(Icons.check_circle_outline),
@@ -108,8 +108,8 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.purple,
-                        onPrimary: Colors.black,
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.purple,
                         textStyle: TextStyle(fontSize: 20.0),
                       ),
                       icon: Icon(Icons.notification_important),
@@ -129,8 +129,8 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.purple,
-                        onPrimary: Colors.black,
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.purple,
                         textStyle: TextStyle(fontSize: 20.0),
                       ),
                       icon: Icon(Icons.cloud),

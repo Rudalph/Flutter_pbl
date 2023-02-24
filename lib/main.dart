@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Colors.purple, Colors.blue],
+                        colors: [Color(0xFFFFCDA5), Color(0xFFEE4D5F)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -87,9 +87,7 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Colors.purple, Colors.blue],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                        colors: [Color(0xFFFFCDA5), Color(0xFFEE4D5F)],
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -123,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Colors.purple, Colors.blue],
+                        colors: [Color(0xFFFFCDA5), Color(0xFFEE4D5F)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -153,7 +151,7 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Colors.purple, Colors.blue],
+                        colors: [Color(0xFFFFCDA5), Color(0xFFEE4D5F)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),

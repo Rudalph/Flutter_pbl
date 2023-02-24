@@ -29,7 +29,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.home),
-        title: Text('Dis Man Sym'),
+        title: Text(
+          'Dis Man Sym',
+          style: TextStyle(fontFamily: 'Raleway'),
+        ),
         backgroundColor: Color(0xFFEE4D5F),
         foregroundColor: Colors.black,
       ),

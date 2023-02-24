@@ -68,8 +68,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   Text(
                     'Temperature: ${weatherData['main']['temp']}°C',
                     style: TextStyle(
+                      fontFamily: 'Raleway',
+                      fontWeight: FontWeight.w300,
                       fontSize: 25,
-                      fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                   ),
@@ -80,7 +81,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     'City: ${weatherData['name']}',
                     style: TextStyle(
                       fontSize: 25,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Raleway',
+                      fontWeight: FontWeight.w300,
                       color: Colors.black,
                     ),
                   ),
@@ -91,7 +93,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     'Weather: ${weatherData['weather'][0]['description']}',
                     style: TextStyle(
                       fontSize: 25,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Raleway',
+                      fontWeight: FontWeight.w300,
                       color: Colors.black,
                     ),
                   ),
@@ -103,7 +106,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           'Rain: Not available',
                           style: TextStyle(
                             fontSize: 25,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Raleway',
+                            fontWeight: FontWeight.w300,
                             color: Colors.black,
                           ),
                         )
@@ -111,7 +115,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           'Rain: ${weatherData['rain']['1h']}mm',
                           style: TextStyle(
                             fontSize: 25,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Raleway',
+                            fontWeight: FontWeight.w300,
                             color: Colors.black,
                           ),
                         ),

@@ -64,7 +64,8 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
                         backgroundColor: Colors.purple,
-                        textStyle: TextStyle(fontSize: 20.0),
+                        textStyle:
+                            TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
                       icon: Icon(Icons.warning),
                       label: Text('Disasters'),
@@ -85,7 +86,8 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
                         backgroundColor: Colors.purple,
-                        textStyle: TextStyle(fontSize: 20.0),
+                        textStyle:
+                            TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
                       icon: Icon(Icons.check_circle_outline),
                       label: Text('Do\'s & Dont\'s'),
@@ -110,7 +112,8 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
                         backgroundColor: Colors.purple,
-                        textStyle: TextStyle(fontSize: 20.0),
+                        textStyle:
+                            TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
                       icon: Icon(Icons.notification_important),
                       label: Text('Alerts'),
@@ -131,7 +134,8 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
                         backgroundColor: Colors.purple,
-                        textStyle: TextStyle(fontSize: 20.0),
+                        textStyle:
+                            TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
                       icon: Icon(Icons.cloud),
                       label: Text('Weather Forecast'),

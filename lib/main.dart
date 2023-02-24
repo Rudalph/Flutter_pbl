@@ -54,6 +54,14 @@ class HomeScreen extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
                     height: 48.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.purple, Colors.blue],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
                     child: ElevatedButton.icon(
                       onPressed: () {
                         Navigator.of(context).push(
@@ -62,8 +70,9 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.purple,
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        onPrimary: Colors.black,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -76,6 +85,14 @@ class HomeScreen extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
                     height: 48.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.purple, Colors.blue],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
                     child: ElevatedButton.icon(
                       onPressed: () {
                         Navigator.of(context).push(
@@ -84,13 +101,14 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.purple,
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        onPrimary: Colors.black,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
-                      icon: Icon(Icons.check_circle_outline),
-                      label: Text('Do\'s & Dont\'s'),
+                      icon: Icon(Icons.warning),
+                      label: Text("Do's and Dont's"),
                     ),
                   ),
                 ),
@@ -103,6 +121,14 @@ class HomeScreen extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
                     height: 48.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.purple, Colors.blue],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
                     child: ElevatedButton.icon(
                       onPressed: () {
                         Navigator.of(context).push(
@@ -110,12 +136,13 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.purple,
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        onPrimary: Colors.black,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
-                      icon: Icon(Icons.notification_important),
+                      icon: Icon(Icons.warning),
                       label: Text('Alerts'),
                     ),
                   ),
@@ -124,6 +151,14 @@ class HomeScreen extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
                     height: 48.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.purple, Colors.blue],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
                     child: ElevatedButton.icon(
                       onPressed: () {
                         Navigator.of(context).push(
@@ -132,12 +167,13 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.purple,
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        onPrimary: Colors.black,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
-                      icon: Icon(Icons.cloud),
+                      icon: Icon(Icons.warning),
                       label: Text('Weather Forecast'),
                     ),
                   ),

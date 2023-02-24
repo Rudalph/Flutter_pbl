@@ -48,20 +48,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Container(
-                    height: 200,
-                    width: 200,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white70,
-                    ),
-                    child: Icon(
-                      FontAwesomeIcons.sun,
-                      size: 100,
-                      color: Color.fromARGB(205, 6, 32, 161),
-                    ),
-                  ),
                   SizedBox(
                     height: 20,
                   ),

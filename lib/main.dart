@@ -103,12 +103,12 @@ class HomeScreen extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,
-                        shadowColor: Colors.transparent,
+                        shadowColor: Color.fromARGB(0, 249, 249, 249),
                         onPrimary: Colors.black,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
-                      icon: Icon(Icons.warning),
+                      icon: Icon(Icons.notification_important),
                       label: Text("Alert"),
                     ),
                   ),
@@ -144,7 +144,7 @@ class HomeScreen extends StatelessWidget {
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
-                      icon: Icon(Icons.warning),
+                      icon: Icon(Icons.check_circle_outline),
                       label: Text("Do's and Dont's"),
                     ),
                   ),
@@ -175,7 +175,7 @@ class HomeScreen extends StatelessWidget {
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
-                      icon: Icon(Icons.warning),
+                      icon: Icon(Icons.cloud),
                       label: Text('Weather Forecast'),
                     ),
                   ),

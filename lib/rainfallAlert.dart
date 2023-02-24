@@ -38,80 +38,97 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   @override
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: weatherData == null
           ? Center(
               child: CircularProgressIndicator(),
             )
-          : Container(
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Temperature: ${weatherData['main']['temp']}°C',
-                    style: TextStyle(
-                      fontFamily: 'Raleway',
-                      fontWeight: FontWeight.w300,
-                      fontSize: 25,
-                      color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'City: ${weatherData['name']}',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Raleway',
-                      fontWeight: FontWeight.w300,
-                      color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Weather: ${weatherData['weather'][0]['description']}',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Raleway',
-                      fontWeight: FontWeight.w300,
-                      color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  weatherData['rain'] == null
-                      ? Text(
-                          'Rain: Not available',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: 'Raleway',
-                            fontWeight: FontWeight.w300,
-                            color: Colors.black,
-                          ),
-                        )
-                      : Text(
-                          'Rain: ${weatherData['rain']['1h']}mm',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: 'Raleway',
-                            fontWeight: FontWeight.w300,
-                            color: Colors.black,
-                          ),
+          : Padding(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+              child: Container(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          // color: Colors.white70,
                         ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                ],
+                        child: Icon(
+                          Icons.wb_sunny,
+                          size: 150,
+                          color: Colors.yellowAccent,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      '${weatherData['main']['temp']}°C',
+                      style: TextStyle(
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 50,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      '${weatherData['name']}',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      '${weatherData['weather'][0]['description']}',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    weatherData['rain'] == null
+                        ? Text(
+                            'Precipitation: 0.00mm',
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: 'Raleway',
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black,
+                            ),
+                          )
+                        : Text(
+                            'Precipitation: ${weatherData['rain']['1h']}mm',
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: 'Raleway',
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black,
+                            ),
+                          ),
+                  ],
+                ),
               ),
             ),
     );

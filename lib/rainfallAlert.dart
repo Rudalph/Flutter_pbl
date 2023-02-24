@@ -1,8 +1,10 @@
 import 'dart:convert';
+import 'package:dis_man_sym/alerts.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'weatherforecast.dart';
 
 class WeatherScreen extends StatefulWidget {
   @override
@@ -37,22 +39,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: weatherData == null
+    return Container(
+      child: weatherData == null
           ? Center(
               child: CircularProgressIndicator(),
             )
           : Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Colors.purple,
-                    Colors.purple,
-                  ],
-                ),
-              ),
+              width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -64,7 +57,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       color: Colors.white70,
                     ),
                     child: Icon(
-                      FontAwesomeIcons.cloudMoon,
+                      FontAwesomeIcons.sun,
                       size: 100,
                       color: Color.fromARGB(205, 6, 32, 161),
                     ),
@@ -124,31 +117,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         ),
                   SizedBox(
                     height: 20,
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
-                    width: double.infinity,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.blue[300],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop(
-                          MaterialPageRoute(
-                            builder: (context) => WeatherScreen(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        'Back',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
                   ),
                 ],
               ),

@@ -9,26 +9,66 @@ class TsunamisScreen extends StatelessWidget {
         backgroundColor: Colors.purple,
         foregroundColor: Colors.black,
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: ListView.builder(
-              itemCount: 1,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    "For up-to-date emergency information, you should keep listening to your weather radio, tuning in to a Coast Guard emergency frequency station, or watching local radio or television.\n"
-                    "Before assisting others who are hurt or trapped, make sure you have no injuries and get first aid if you do.\n"
-                    "If someone has to be saved, contact experts who have the necessary tools. Attempting to rescue others in flooded situations has resulted in many deaths or serious injuries.\n"
-                    "Help those who need particular support: children, the elderly, those without access to transportation, large families who could require more aid in an emergency, those with impairments, and those who look after them.",
-                    style: TextStyle(fontSize: 25),
-                  ),
-                );
-              },
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              "For up-to-date emergency information:",
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: 10),
+            Text(
+              "- Keep listening to your weather radio\n"
+              "- Tune in to a Coast Guard emergency frequency station\n"
+              "- Watch local radio or television",
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Before assisting others:",
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "- Make sure you have no injuries and get first aid if you do.\n"
+              "- Contact experts who have the necessary tools.\n"
+              "- Avoid attempting to rescue others in flooded situations",
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Help those who need support:",
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "- Children\n"
+              "- The elderly\n"
+              "- Those without access to transportation\n"
+              "- Large families\n"
+              "- People with impairments\n"
+              "- Those who look after them",
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -39,8 +39,9 @@ class HomeScreen extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Colors.white,
+              Color.fromARGB(255, 247, 159, 87),
               Color(0xFFFFCDA5),
+              Colors.white,
             ],
           ),
         ),
@@ -58,8 +59,7 @@ class HomeScreen extends StatelessWidget {
                       gradient: LinearGradient(
                         colors: [
                           Color(0xFFEE4D5F),
-                          Color(0xFFFFCDA5),
-                          Color(0xFFEE4D5F)
+                          Color.fromARGB(255, 249, 198, 156)
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -91,11 +91,7 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [
-                          Color(0xFFEE4D5F),
-                          Color(0xFFFFCDA5),
-                          Color(0xFFEE4D5F)
-                        ],
+                        colors: [Color(0xFFEE4D5F), Color(0xFFFFCDA5)],
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -128,11 +124,7 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [
-                          Color(0xFFEE4D5F),
-                          Color(0xFFFFCDA5),
-                          Color(0xFFEE4D5F)
-                        ],
+                        colors: [Color(0xFFEE4D5F), Color(0xFFFFCDA5)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -163,11 +155,7 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [
-                          Color(0xFFEE4D5F),
-                          Color(0xFFFFCDA5),
-                          Color(0xFFEE4D5F)
-                        ],
+                        colors: [Color(0xFFEE4D5F), Color(0xFFFFCDA5)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),

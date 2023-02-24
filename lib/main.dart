@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         leading: Icon(Icons.home),
         title: Text('Dis Man Sym'),
-        backgroundColor: Colors.purple,
+        backgroundColor: Color(0xFFEE4D5F),
         foregroundColor: Colors.black,
       ),
       body: Container(
@@ -39,8 +39,8 @@ class HomeScreen extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Colors.purple,
-              Colors.blue,
+              Colors.white,
+              Color(0xFFFFCDA5),
             ],
           ),
         ),
@@ -56,7 +56,11 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Color(0xFFFFCDA5), Color(0xFFEE4D5F)],
+                        colors: [
+                          Color(0xFFEE4D5F),
+                          Color(0xFFFFCDA5),
+                          Color(0xFFEE4D5F)
+                        ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -87,7 +91,50 @@ class HomeScreen extends StatelessWidget {
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Color(0xFFFFCDA5), Color(0xFFEE4D5F)],
+                        colors: [
+                          Color(0xFFEE4D5F),
+                          Color(0xFFFFCDA5),
+                          Color(0xFFEE4D5F)
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => alerts()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        onPrimary: Colors.black,
+                        textStyle:
+                            TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
+                      ),
+                      icon: Icon(Icons.warning),
+                      label: Text("Alert"),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16.0),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 8.0),
+                    height: 48.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xFFEE4D5F),
+                          Color(0xFFFFCDA5),
+                          Color(0xFFEE4D5F)
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -110,48 +157,17 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              ],
-            ),
-            SizedBox(height: 16.0),
-            Row(
-              children: [
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
                     height: 48.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Color(0xFFFFCDA5), Color(0xFFEE4D5F)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => alerts()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        shadowColor: Colors.transparent,
-                        onPrimary: Colors.black,
-                        textStyle:
-                            TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
-                      ),
-                      icon: Icon(Icons.warning),
-                      label: Text('Alerts'),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 8.0),
-                    height: 48.0,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFFFFCDA5), Color(0xFFEE4D5F)],
+                        colors: [
+                          Color(0xFFEE4D5F),
+                          Color(0xFFFFCDA5),
+                          Color(0xFFEE4D5F)
+                        ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),

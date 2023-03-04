@@ -66,27 +66,26 @@ class _MyAppState extends State<WeatherForecast> {
                     var dateTime = DateTime.fromMillisecondsSinceEpoch(
                         weatherData[index]['dt'] * 1000);
                     var formattedTime = DateFormat.Hm().format(dateTime);
-                    var iconData;
+                    var iconImage;
                     switch (weatherData[index]['weather'][0]['main']) {
                       case 'Clear':
-                        iconData = Icons.wb_sunny;
+                        iconImage = 'assets/images/sun.png';
                         break;
                       case 'Rain':
-                        iconData = Icons.beach_access;
+                        iconImage = 'assets/images/cloudy.png';
                         break;
                       case 'Clouds':
-                        iconData = Icons.cloud;
+                        iconImage = 'assets/images/cloudy.png';
                         break;
-                      case 'smoke':
-                        iconData = Icons.smoke_free;
+                      case 'Smoke':
+                        iconImage = 'assets/images/sun.png';
                         break;
                       default:
-                        iconData = Icons.error;
+                        iconImage = 'assets/images/sun.png';
                     }
                     return ListTile(
-                      leading: Icon(
-                        iconData,
-                        color: Colors.yellowAccent,
+                      leading: Image.asset(
+                        iconImage,
                       ),
                       title: Text(
                         '${weatherData[index]['weather'][0]['description']}',

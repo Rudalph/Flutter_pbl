@@ -28,9 +28,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.home),
+        leading: Image.asset(
+          'assets/images/mainGlobeC.png',
+        ),
         title: Text(
-          'Dis Man Sym',
+          'AlertMe',
           style: TextStyle(fontFamily: 'Raleway'),
         ),
         backgroundColor:

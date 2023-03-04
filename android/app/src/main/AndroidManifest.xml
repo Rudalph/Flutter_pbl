@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dis_man_sym">
    <application
-        android:label="dis_man_sym"
+        android:label="AlertMe"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -79,6 +79,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           SizedBox(width: 20),
+                          Icon(
+                            Icons.wb_sunny,
+                            size: 150,
+                            color: Colors.yellowAccent,
+                          ),
                         ]),
                     SizedBox(
                       height: 20,

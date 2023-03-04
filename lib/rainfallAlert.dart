@@ -79,10 +79,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           SizedBox(width: 20),
-                          Icon(
-                            Icons.wb_sunny,
-                            size: 150,
-                            color: Colors.yellowAccent,
+                          Image.asset(
+                            'assets/images/sun.png',
+                            width: 150,
+                            height: 150,
                           ),
                         ]),
                     SizedBox(
@@ -100,22 +100,42 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    DropdownButton(
-                      value: city, // add this line
-                      items: cities.map<DropdownMenuItem<String>>(
-                        (String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 255, 225, 200).withOpacity(0.1),
+                            Color.fromARGB(255, 255, 225, 200).withOpacity(0.1)
+                          ],
+                        ),
+                      ),
+                      child: DropdownButton(
+                        value: city,
+                        dropdownColor:
+                            Color.fromARGB(255, 255, 225, 200).withOpacity(0.9),
+                        items: cities.map<DropdownMenuItem<String>>(
+                          (String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value,
+                                  style: TextStyle(
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 25,
+                                    color: Colors.white,
+                                  )),
+                            );
+                          },
+                        ).toList(),
+                        onChanged: (String? value) {
+                          setState(() {
+                            city = value!;
+                          });
+                          getWeatherData(); // call getWeatherData to fetch weather data for the selected city
                         },
-                      ).toList(),
-                      onChanged: (String? value) {
-                        setState(() {
-                          city = value!;
-                        });
-                        getWeatherData(); // call getWeatherData to fetch weather data for the selected city
-                      },
+                      ),
                     ),
                     SizedBox(
                       height: 20,

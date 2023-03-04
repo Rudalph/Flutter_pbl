@@ -15,6 +15,28 @@ class _WeatherScreenState extends State<WeatherScreen> {
   String apiKey = '54a4215d65eb60a2a0c49c14c289a227';
   String city = "Mumbai";
   dynamic weatherData;
+  List<String> cities = [
+    'Mumbai',
+    'Delhi',
+    'Bangalore',
+    'Hyderabad',
+    'Chennai',
+    'Kolkata',
+    'Pune',
+    'Ahmedabad',
+    'Jaipur',
+    'Surat',
+    'Lucknow',
+    'Kanpur',
+    'Nagpur',
+    'Visakhapatnam',
+    'Bhopal',
+    'Patna',
+    'Ludhiana',
+    'Agra',
+    'Nashik',
+    'Vadodara'
+  ];
 
   @override
   void initState() {
@@ -53,22 +75,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Align(
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 150,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          // color: Colors.white70,
-                        ),
-                        child: Icon(
-                          Icons.wb_sunny,
-                          size: 150,
-                          color: Colors.yellowAccent,
-                        ),
-                      ),
-                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(width: 20),
+                        ]),
                     SizedBox(
                       height: 20,
                     ),
@@ -84,14 +95,22 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      '${weatherData['name']}',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                      ),
+                    DropdownButton(
+                      value: city, // add this line
+                      items: cities.map<DropdownMenuItem<String>>(
+                        (String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        },
+                      ).toList(),
+                      onChanged: (String? value) {
+                        setState(() {
+                          city = value!;
+                        });
+                        getWeatherData(); // call getWeatherData to fetch weather data for the selected city
+                      },
                     ),
                     SizedBox(
                       height: 20,

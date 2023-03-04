@@ -73,12 +73,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       height: 20,
                     ),
                     Text(
-                      '${weatherData['main']['temp']}°C',
+                      '${weatherData['main']['temp'].round()}°C',
                       style: TextStyle(
                         fontFamily: 'Raleway',
                         fontWeight: FontWeight.w700,
                         fontSize: 50,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(
@@ -90,41 +90,57 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         fontSize: 25,
                         fontFamily: 'Raleway',
                         fontWeight: FontWeight.w300,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     Text(
-                      '${weatherData['weather'][0]['description']}',
+                      '${weatherData['weather'][0]['description'][0].toUpperCase()}${weatherData['weather'][0]['description'].substring(1)}',
                       style: TextStyle(
                         fontSize: 25,
                         fontFamily: 'Raleway',
                         fontWeight: FontWeight.w300,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    weatherData['rain'] == null
-                        ? Text(
-                            'Precipitation: 0.00mm',
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontFamily: 'Raleway',
-                              fontWeight: FontWeight.w300,
-                              color: Colors.black,
-                            ),
+                    weatherData['rain'] != null
+                        ? Column(
+                            children: [
+                              Text(
+                                'Precipitation: ${weatherData['rain']['1h']}mm',
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontFamily: 'Raleway',
+                                  fontWeight: FontWeight.w300,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                'Wind speed: ${weatherData['wind']['speed']} m s',
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontFamily: 'Raleway',
+                                  fontWeight: FontWeight.w300,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
                           )
                         : Text(
-                            'Precipitation: ${weatherData['rain']['1h']}mm',
+                            'Wind speed: ${weatherData['wind']['speed']} m s',
                             style: TextStyle(
                               fontSize: 25,
                               fontFamily: 'Raleway',
                               fontWeight: FontWeight.w300,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                   ],

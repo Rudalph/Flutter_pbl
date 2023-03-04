@@ -34,6 +34,7 @@ class _MyAppState extends State<WeatherForecast> {
           ),
           backgroundColor: Color(0xFFEE4D5F),
           foregroundColor: Colors.white,
+          centerTitle: true,
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
@@ -51,7 +52,7 @@ class _MyAppState extends State<WeatherForecast> {
               end: Alignment.bottomCenter,
               colors: [
                 Color(0xFFEE4D5F),
-                Color(0xFFFFCDA5),
+                Color.fromARGB(255, 236, 171, 118),
               ],
             ),
           ),
@@ -76,6 +77,9 @@ class _MyAppState extends State<WeatherForecast> {
                       case 'Clouds':
                         iconData = Icons.cloud;
                         break;
+                      case 'smoke':
+                        iconData = Icons.smoke_free;
+                        break;
                       default:
                         iconData = Icons.error;
                     }
@@ -90,7 +94,7 @@ class _MyAppState extends State<WeatherForecast> {
                             color: Colors.white, fontFamily: 'Raleway'),
                       ),
                       subtitle: Text(
-                        '${weatherData[index]['main']['temp']}°C',
+                        '${weatherData[index]['main']['temp'].round()}°C',
                         style: TextStyle(
                             color: Colors.white, fontFamily: 'Raleway'),
                       ),

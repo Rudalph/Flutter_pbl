@@ -1,52 +1,111 @@
 import 'package:flutter/material.dart';
 
 class EarthquakeScreen extends StatelessWidget {
-  final List<String> items = [
-    "a battery-operated flashlight with extras",
-    "powered by batteries radio",
-    "handbook and first-aid kit",
-    "Water and dry goods for emergencies (packed and sealed)",
-    "a waterproof container with matches and candles a knife",
-    "Tablets or powdered water filters with chlorine",
-    "open a can.",
-    "necessary medications",
-    "Credit cards and cash",
-    "hefty cords and ropes",
-    "sturdy footwear"
-  ];
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("EARTHQUAKE"),
-        backgroundColor: Colors.purple,
-        foregroundColor: Colors.black,
+        title: Text('EARTHQUAKE', style: TextStyle(fontFamily: 'Raleway')),
+        backgroundColor: Color(0xFFEE4D5F),
+        foregroundColor: Colors.white,
+        centerTitle: true,
       ),
       body: Container(
-        child: Column(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFFEE4D5F), Color.fromARGB(255, 236, 171, 118)],
+          ),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: ListView(
           children: <Widget>[
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'DO and DONT:',
-              style: TextStyle(
-                fontSize: 25,
-              ),
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      SizedBox(height: 20),
-                      Text(items[index], style: TextStyle(fontSize: 25)),
-                    ],
-                  );
-                },
-              ),
+            Text("DO and DONT'S",
+                style: TextStyle(
+                    fontSize: 25,
+                    fontFamily: 'Raleway',
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white),
+                textAlign: TextAlign.center),
+            SizedBox(height: 20),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                    "• Build away from floodplains unless you can elevate and strengthen your house.",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white)),
+                SizedBox(height: 10),
+                Text(
+                    "• If the furnace, water heater, and electrical panel are at risk of flooding, elevate them.",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white)),
+                SizedBox(height: 10),
+                Text("• You should: in order to get ready for a flood.",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white)),
+                SizedBox(height: 10),
+                Text(
+                    "• Install 'Check Valves' in sewer traps to stop water from flooding your home's drains.",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white)),
+                SizedBox(height: 10),
+                Text(
+                    "• If you want to know if your community will build levees, beams, or floodwalls to prevent floodwater from invading your homes, get in touch with the local government.",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white)),
+                SizedBox(height: 10),
+                Text(
+                    "• To prevent seepage, use waterproofing chemicals to seal the basement walls.",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white)),
+                SizedBox(height: 20),
+                Text(
+                    "If you live in a region where flooding is likely, you should:",
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white)),
+                SizedBox(height: 20),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("• For information, turn on the radio or television.",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Raleway',
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white)),
+                    SizedBox(height: 10),
+                    Text(
+                        "• Recognize the possibility of flash flooding. Move if there's a chance of a flash flood.",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Raleway',
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white)),
+                  ],
+                ),
+              ],
             ),
           ],
         ),

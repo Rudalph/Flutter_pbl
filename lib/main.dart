@@ -33,18 +33,31 @@ class HomeScreen extends StatelessWidget {
           'Dis Man Sym',
           style: TextStyle(fontFamily: 'Raleway'),
         ),
-        backgroundColor: Color(0xFFEE4D5F),
-        foregroundColor: Colors.black,
+        backgroundColor:
+            Colors.transparent, // set background color as transparent
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFFEE4D5F),
+                Color.fromARGB(255, 236, 171, 118),
+              ],
+            ),
+          ),
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(255, 247, 159, 87),
-              Color(0xFFFFCDA5),
-              Colors.white,
+              Color.fromARGB(255, 236, 171, 118),
+              Color(0xFFEE4D5F),
             ],
           ),
         ),
@@ -57,12 +70,12 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
-                    height: 48.0,
+                    height: 65.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Color(0xFFEE4D5F),
-                          Color.fromARGB(255, 249, 198, 156)
+                          Color.fromARGB(255, 255, 225, 200).withOpacity(0.3),
+                          Color.fromARGB(255, 255, 225, 200).withOpacity(0.3)
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -79,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.black,
+                        onPrimary: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -91,10 +104,13 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
-                    height: 48.0,
+                    height: 65.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Color(0xFFEE4D5F), Color(0xFFFFCDA5)],
+                        colors: [
+                          Color.fromARGB(255, 255, 225, 200).withOpacity(0.3),
+                          Color.fromARGB(255, 255, 225, 200).withOpacity(0.3)
+                        ],
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -107,7 +123,7 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,
                         shadowColor: Color.fromARGB(0, 249, 249, 249),
-                        onPrimary: Colors.black,
+                        onPrimary: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -124,10 +140,13 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
-                    height: 48.0,
+                    height: 65.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Color(0xFFEE4D5F), Color(0xFFFFCDA5)],
+                        colors: [
+                          Color.fromARGB(255, 255, 225, 200).withOpacity(0.3),
+                          Color.fromARGB(255, 255, 225, 200).withOpacity(0.3)
+                        ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -143,7 +162,7 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.black,
+                        onPrimary: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -155,10 +174,13 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 8.0),
-                    height: 48.0,
+                    height: 65.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Color(0xFFEE4D5F), Color(0xFFFFCDA5)],
+                        colors: [
+                          Color.fromARGB(255, 255, 225, 200).withOpacity(0.3),
+                          Color.fromARGB(255, 255, 225, 200).withOpacity(0.3)
+                        ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -174,7 +196,7 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.black,
+                        onPrimary: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),

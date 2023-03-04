@@ -5,51 +5,88 @@ class DisasterLandslideScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LANDSLIDES"),
-        backgroundColor: Colors.purple,
-        foregroundColor: Colors.black,
+        title: Text(
+          "Landslides",
+          style: TextStyle(fontFamily: 'Raleway'),
+        ),
+        backgroundColor: Color.fromARGB(255, 236, 171, 118),
+        foregroundColor: Colors.white,
+        centerTitle: true,
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) => Text(
-                _textData[index],
-                style: TextStyle(fontSize: 25),
-              ),
-              itemCount: _textData.length,
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color.fromARGB(255, 236, 171, 118), Color(0xFFEE4D5F)],
             ),
           ),
-        ],
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  'LANDSLIDES',
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Raleway',
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'INFO:',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Raleway',
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "The Himalayas, the world's tallest mountain range, are located in India. They were created when the Indian and Eurasian plates collided, and as the Indian plate moves northward toward China, it continuously stresses the rocks, making them weak, friable, and vulnerable to earthquakes and landslides. Natural disasters are thought to be caused by tension that is accumulated due to the Indian crust's slow motion of 5 cm each year. Some landslides cause catastrophes that are singular and unmatched. Along with the Himalayas, the Northeastern hill ranges, the Western Ghats, the Nilgiris, the Eastern Ghats, and the Vindhyans, which together make up roughly 15% of the continent, landslides and avalanches are among the main hydro-geological hazards that significantly affect broad areas of India. Countless landslides of every kind, name, and description can be found in the Himalayas alone.",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'EMERGENCY KIT:',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Raleway',
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '- Battery operated torch\n- Extra batteries\n- Battery operated radio\n- First aid kit and essential medicines\n- Important papers (Ration card, Voter ID card, Aadhar card etc)\n- Emergency food (dry items) and water (packed and sealed)\n- Candles and matches in a waterproof container\n- Knife\n- Chlorine tablets or powdered water purifiers\n- Cash, Aadhar Card, and Ration Card\n- Thick ropes and cords\n- Shoes',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'Raleway',
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
-
-  static const _textData = [
-    "INFO:-",
-    "The Himalayas, the world's tallest mountain range, are located in India. They were created when the Indian and Eurasian plates collided, and as the Indian plate moves northward toward China, it continuously stresses the rocks, making them weak, friable, and vulnerable to earthquakes and landslides. Natural disasters are thought to be caused by tension that is accumulated due to the Indian crust's slow motion of 5 cm each year. Some landslides cause catastrophes that are singular and unmatched. Along with the Himalayas, the Northeastern hill ranges, the Western Ghats, the Nilgiris, the Eastern Ghats, and the Vindhyans, which together make up roughly 15% of the continent, landslides and avalanches are among the main hydro-geological hazards that significantly affect broad areas of India. Countless landslides of every kind, name, and description can be found in the Himalayas alone.",
-    "Prepare for your trip to a mountainous area using the weather forecast or news reports.",
-    "Without wasting time, move away from the landslide's path or the valleys downstream.",
-    "Maintain clean drains and check them for debris such as trash, leaves, plastic bags, and other items.",
-    "Weep holes should remain open.",
-    "Increase the number of trees with roots that can hold soil,",
-    "Find regions where rocks are falling or where structures are sinking, look for cracks that suggest landslides, and relocate to safer areas. Landslides upstream are evident even in muddy river waters.",
-    "When you see such signals, get in touch with the nearby Tehsil or District Head Office.",
-    "Make sure the slope's toe is protected, not chopped, and that no trees be uprooted unless re-vegetation is intended.",
-    "Keep an ear out for odd noises like rocks crashing together or trees breaking.",
-    "EMERGENCY KIT:-",
-    "Battery operated torch",
-    "Extra batteries",
-    "Battery operated radio",
-    "First aid kit and manual",
-    "Emergency food (dry items) and water (packed and sealed)",
-    "Candles and matches in a waterproof container",
-    "Knife",
-    "Chlorine tablets or powdered water purifiers",
-    "Can opener.",
-    "Essential medicines",
-    "Cash, Aadhar Card and Ration Card",
-    "Thick ropes and cords",
-    "Sturdy shoes",
-  ];
 }

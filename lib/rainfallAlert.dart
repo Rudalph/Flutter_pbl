@@ -35,7 +35,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
     'Ludhiana',
     'Agra',
     'Nashik',
-    'Vadodara'
+    'Vadodara',
+    'Singapore'
   ];
 
   @override
@@ -62,6 +63,26 @@ class _WeatherScreenState extends State<WeatherScreen> {
   @override
   @override
   Widget build(BuildContext context) {
+    String iconImage;
+    switch (weatherData['weather'][0]['main']) {
+      case 'Clear':
+        iconImage = 'assets/images/sun.png';
+        break;
+      case 'Rain':
+        iconImage = 'assets/images/rainy.png';
+        break;
+      case 'Clouds':
+        iconImage = 'assets/images/cloudy.png';
+        break;
+      case 'Smoke':
+        iconImage = 'assets/images/smoky.png';
+        break;
+      case 'Haze':
+        iconImage = 'assets/images/smoky.png';
+        break;
+      default:
+        iconImage = 'assets/images/sun.png';
+    }
     return Container(
       child: weatherData == null
           ? Center(
@@ -80,10 +101,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         children: <Widget>[
                           SizedBox(width: 20),
                           Image.asset(
-                            'assets/images/sun.png',
-                            width: 150,
+                            iconImage,
                             height: 150,
-                          ),
+                            width: 150,
+                          )
                         ]),
                     SizedBox(
                       height: 20,

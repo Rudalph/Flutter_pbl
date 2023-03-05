@@ -72,13 +72,16 @@ class _MyAppState extends State<WeatherForecast> {
                         iconImage = 'assets/images/sun.png';
                         break;
                       case 'Rain':
-                        iconImage = 'assets/images/cloudy.png';
+                        iconImage = 'assets/images/rainy.png';
                         break;
                       case 'Clouds':
                         iconImage = 'assets/images/cloudy.png';
                         break;
                       case 'Smoke':
-                        iconImage = 'assets/images/sun.png';
+                        iconImage = 'assets/images/smoky.png';
+                        break;
+                      case 'Haze':
+                        iconImage = 'assets/images/smoky.png';
                         break;
                       default:
                         iconImage = 'assets/images/sun.png';
@@ -86,6 +89,7 @@ class _MyAppState extends State<WeatherForecast> {
                     return ListTile(
                       leading: Image.asset(
                         iconImage,
+                        height: 30,
                       ),
                       title: Text(
                         '${weatherData[index]['weather'][0]['description']}',

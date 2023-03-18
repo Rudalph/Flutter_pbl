@@ -38,7 +38,6 @@ class HomeScreen extends StatelessWidget {
         backgroundColor:
             Colors.transparent, // set background color as transparent
         foregroundColor: Colors.white,
-        centerTitle: true,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(

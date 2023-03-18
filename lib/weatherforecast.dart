@@ -83,8 +83,11 @@ class _MyAppState extends State<WeatherForecast> {
                       case 'Haze':
                         iconImage = 'assets/images/smoky.png';
                         break;
+                      case 'Thunderstorm':
+                        iconImage = 'assets/images/thunderstrom.png';
+                        break;
                       default:
-                        iconImage = 'assets/images/sun.png';
+                        iconImage = 'assets/images/cloudy.png';
                     }
                     return ListTile(
                       leading: Image.asset(

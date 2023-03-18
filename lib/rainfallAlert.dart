@@ -61,27 +61,33 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
     String iconImage;
-    switch (weatherData['weather'][0]['main']) {
-      case 'Clear':
-        iconImage = 'assets/images/sun.png';
-        break;
-      case 'Rain':
-        iconImage = 'assets/images/rainy.png';
-        break;
-      case 'Clouds':
-        iconImage = 'assets/images/cloudy.png';
-        break;
-      case 'Smoke':
-        iconImage = 'assets/images/smoky.png';
-        break;
-      case 'Haze':
-        iconImage = 'assets/images/smoky.png';
-        break;
-      default:
-        iconImage = 'assets/images/sun.png';
+    if (weatherData != null) {
+      switch (weatherData['weather'][0]['main']) {
+        case 'Clear':
+          iconImage = 'assets/images/sun.png';
+          break;
+        case 'Rain':
+          iconImage = 'assets/images/rainy.png';
+          break;
+        case 'Clouds':
+          iconImage = 'assets/images/cloudy.png';
+          break;
+        case 'Smoke':
+          iconImage = 'assets/images/smoky.png';
+          break;
+        case 'Haze':
+          iconImage = 'assets/images/smoky.png';
+          break;
+        case 'Thunderstorm':
+          iconImage = 'assets/images/thunderstrom.png';
+          break;
+        default:
+          iconImage = 'assets/images/cloudy.png';
+      }
+    } else {
+      iconImage = 'assets/images/cloudy.png';
     }
     return Container(
       child: weatherData == null
@@ -135,7 +141,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       child: DropdownButton(
                         value: city,
                         dropdownColor:
-                            Color.fromARGB(255, 255, 225, 200).withOpacity(0.9),
+                            Color.fromARGB(255, 247, 87, 106).withOpacity(0.65),
                         items: cities.map<DropdownMenuItem<String>>(
                           (String value) {
                             return DropdownMenuItem<String>(

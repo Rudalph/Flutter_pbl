@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Start the timer when the widget is initialized
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(milliseconds: 700), () {
       // Navigate to the home screen when the timer is finished
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => HomeScreen()),

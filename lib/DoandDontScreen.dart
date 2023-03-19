@@ -34,7 +34,14 @@ class DoandDontScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(height: 80.0),
+            SizedBox(height: 10.0),
+            Image.asset(
+              'assets/images/doAndDont.png',
+              height: 200,
+              width: 200,
+              fit: BoxFit.cover,
+            ),
+            SizedBox(height: 40.0),
             Row(
               children: [
                 Expanded(

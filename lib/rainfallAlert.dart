@@ -141,7 +141,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       child: DropdownButton(
                         value: city,
                         dropdownColor:
-                            Color.fromARGB(255, 247, 87, 106).withOpacity(0.65),
+                            Color.fromARGB(255, 247, 87, 106).withOpacity(0.7),
                         items: cities.map<DropdownMenuItem<String>>(
                           (String value) {
                             return DropdownMenuItem<String>(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'DoandDontScreen.dart';
 import 'alerts.dart';
 import 'weatherforecast.dart';
+import 'splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Disaster Management System",
-      home: HomeScreen(),
-    );
+        title: "Disaster Management System",
+        home: SplashScreen(), // Splash Screen
+        routes: {
+          '/home': (context) => HomeScreen(),
+        });
   }
 }
 

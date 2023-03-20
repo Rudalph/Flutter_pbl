@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class WeatherApi {
+  late String city;
   static Future<dynamic> getWeather() async {
     var apiKey = '54a4215d65eb60a2a0c49c14c289a227';
     var url =

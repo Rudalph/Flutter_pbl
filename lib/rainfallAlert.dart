@@ -1,10 +1,13 @@
 import 'dart:convert';
-import 'package:dis_man_sym/alerts.dart';
+
+import 'dart:html';
+import 'package:dis_man_sym/Alerts.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'weatherforecast.dart';
+import 'Alerts.dart';
 
 class WeatherScreen extends StatefulWidget {
   @override
@@ -62,6 +65,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double temperature = weatherData['main']['temp'];
     String iconImage;
     if (weatherData != null) {
       switch (weatherData['weather'][0]['main']) {
@@ -89,7 +93,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
     } else {
       iconImage = 'assets/images/cloudy.png';
     }
+    var static;
+    // var temperature;
     return Container(
+       
       child: weatherData == null
           ? Center(
               child: CircularProgressIndicator(),
@@ -115,8 +122,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     SizedBox(
                       height: 20,
                     ),
+
+                   
+                   
+                    
+
                     Text(
-                      '${weatherData['main']['temp'].round()}°C',
+                      '${temperature.round()}°C',
                       style: TextStyle(
                         fontFamily: 'Raleway',
                         fontWeight: FontWeight.w700,
@@ -127,7 +139,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     SizedBox(
                       height: 20,
                     ),
+                    
+                    // Text(
+                    //        temperature > 10 ? "very hot": "normal"
+                    // ),
+                    
                     Container(
+
+                       
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
@@ -138,6 +157,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           ],
                         ),
                       ),
+                      
                       child: DropdownButton(
                         value: city,
                         dropdownColor:
@@ -164,8 +184,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         },
                       ),
                     ),
+                    
                     SizedBox(
                       height: 20,
+                      
                     ),
                     Text(
                       '${weatherData['weather'][0]['description'][0].toUpperCase()}${weatherData['weather'][0]['description'].substring(1)}',
@@ -214,9 +236,42 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               color: Colors.white,
                             ),
                           ),
+                          Container(
+                            height: 20,
+                          ),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                         
+                      color: Color.fromARGB(30, 255, 255, 255),
+                      
+                      ),
+                      height: 50,
+                      width: 400,
+                       padding: EdgeInsets.all(10),
+                       child: Center(
+                          child: Card(
+                          
+                        color: Color.fromARGB(0, 158, 158, 158),
+                        child: Text(
+                           temperature > 34 ? "BE ALERT": "ALERTS GENERATED ARE SEEN HERE",
+                           style: TextStyle(
+                               fontSize: 20,
+                               color: Color.fromARGB(255, 160, 11, 0),
+                           ),
+                          ),
+                       ),
+                       ) 
+                       
+                    )
+                          
                   ],
+
+                  
                 ),
+                
               ),
+              
             ),
     );
   }

@@ -2,7 +2,7 @@ import 'package:dis_man_sym/DisastersScreen.dart';
 import 'package:dis_man_sym/rainfallAlert.dart';
 import 'package:flutter/material.dart';
 import 'DoandDontScreen.dart';
-import 'alerts.dart';
+import 'Alerts.dart';
 import 'weatherforecast.dart';
 import 'splashScreen.dart';
 
@@ -121,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                     child: ElevatedButton.icon(
                       onPressed: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => alerts()),
+                          MaterialPageRoute(builder: (context) => alerts(temperature: 2,)),
                         );
                       },
                       style: ElevatedButton.styleFrom(

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 
 class alerts extends StatelessWidget {
-  const alerts({super.key});
-
+  
+   final double temperature;
+   const alerts({required this.temperature});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +36,7 @@ class alerts extends StatelessWidget {
                 width: 300,
                 child: Card
                 (
-                  color: Colors.purple,
+                  color: Colors.black,
                   shape: RoundedRectangleBorder
                   (
                     borderRadius: BorderRadius.circular(30)
@@ -95,7 +96,16 @@ class alerts extends StatelessWidget {
                 width: 300,
                 child: Card
                 (
-                  color: Colors.purple,
+                  child: Text(
+          'Temperature: ${temperature.round()}°C',
+          style: TextStyle(
+            fontFamily: 'Raleway',
+            fontWeight: FontWeight.w700,
+            fontSize: 50,
+            color: Colors.black,
+          ),
+        ),
+                  color: Colors.blue,
                   shape: RoundedRectangleBorder
                   (
                     borderRadius: BorderRadius.circular(30)

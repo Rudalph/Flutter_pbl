@@ -1,6 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:translator/translator.dart';
 
-class DisasterFloodScreen extends StatelessWidget {
+class DisasterFloodScreen extends StatefulWidget {
+  _DisasterFloodScreenState createState() => _DisasterFloodScreenState();
+}
+
+class _DisasterFloodScreenState extends State<DisasterFloodScreen> {
+  final translator = GoogleTranslator();
+  String _translatedText = "";
+  String _selectedLanguage = "en"; // Default language is English
+
+  List<PopupMenuEntry<String>> _buildLanguageMenuItems() {
+    return [
+      PopupMenuItem<String>(
+        value: "en",
+        child: Text("English"),
+      ),
+      PopupMenuItem<String>(
+        value: "hi",
+        child: Text("Hindi"),
+      ),
+      PopupMenuItem<String>(
+        value: "mr",
+        child: Text("Marathi"),
+      ),
+    ];
+  }
+
+  Future<void> _translateText() async {
+    String textToTranslate = "";
+    setState(() {
+      textToTranslate = getTextToTranslate();
+    });
+    Translation translation =
+        await translator.translate(textToTranslate, to: _selectedLanguage);
+    setState(() {
+      _translatedText = translation.text;
+    });
+  }
+
+  String getTextToTranslate() {
+    String text = "";
+    text = 'Flood';
+    text = 'INFO:';
+    text = "India";
+    text = 'EMERGENCY KIT:';
+    text = '- Battery';
+    return text;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +60,20 @@ class DisasterFloodScreen extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 236, 171, 118),
         foregroundColor: Colors.white,
         centerTitle: true,
+        actions: <Widget>[
+          PopupMenuButton<String>(
+            icon: Icon(Icons.translate),
+            onSelected: (language) {
+              setState(() {
+                _selectedLanguage = language;
+              });
+              _translateText(); // Call _translateText() to update the translated text
+            },
+            itemBuilder: (BuildContext context) {
+              return _buildLanguageMenuItems();
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -27,7 +89,9 @@ class DisasterFloodScreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(20),
                 child: Text(
-                  'Flood',
+                  _translatedText.isEmpty
+                      ? getTextToTranslate()
+                      : _translatedText,
                   style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.w700,
@@ -42,7 +106,9 @@ class DisasterFloodScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'INFO:',
+                      _translatedText.isEmpty
+                          ? getTextToTranslate()
+                          : _translatedText,
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w700,
@@ -52,7 +118,9 @@ class DisasterFloodScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "India is extremely susceptible to flooding. Over 40 million hectares (mha) of the 329 million hectares (mha) total geographic area are at risk of flooding. Floods are a frequent occurrence that result in significant human casualties as well as damage to property, infrastructure, and public services. The fact that flood-related damages are on the rise is cause for alarm. In the past ten years, from 1996 to 2005, the average yearly flood damage was Rs. 4745 crore, compared to Rs. 1805 crore, the corresponding average for the prior 53 years. Numerous factors, such as a sharp rise in population, fast urbanisation, an increase in economic and development activity in flood plains, and global warming, might be blamed for this.",
+                      _translatedText.isEmpty
+                          ? getTextToTranslate()
+                          : _translatedText,
                       style: TextStyle(
                         fontSize: 20,
                         fontFamily: 'Raleway',
@@ -62,7 +130,9 @@ class DisasterFloodScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'EMERGENCY KIT:',
+                      _translatedText.isEmpty
+                          ? getTextToTranslate()
+                          : _translatedText,
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w700,
@@ -72,7 +142,9 @@ class DisasterFloodScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      '- Battery operated torch\n- Extra batteries\n- Battery operated radio\n- First aid kit and essential medicines\n- Important papers (Ration card, Voter ID card, Aadhar card etc)\n- Emergency food (dry items) and water (packed and sealed)\n- Candles and matches in a waterproof container\n- Knife\n- Chlorine tablets or powdered water purifiers\n- Cash, Aadhar Card, and Ration Card\n- Thick ropes and cords\n- Shoes',
+                      _translatedText.isEmpty
+                          ? getTextToTranslate()
+                          : _translatedText,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w300,

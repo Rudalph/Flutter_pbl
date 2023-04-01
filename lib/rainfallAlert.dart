@@ -233,7 +233,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         padding: EdgeInsets.all(10),
                         child: Center(
                           child: Text(
-                            temperature > 34
+                            temperature > 35
                                 ? "BE ALERT"
                                 : "ALERTS GENERATED ARE SEEN HERE",
                             style: TextStyle(

@@ -1,114 +1,105 @@
 import 'package:flutter/material.dart';
+import 'package:translator/translator.dart';
 
-class TsunamisScreen extends StatelessWidget {
+class TsunamisScreen extends StatefulWidget {
   @override
+  _TsunamisScreenState createState() => _TsunamisScreenState();
+}
+
+class _TsunamisScreenState extends State<TsunamisScreen> {
+  String headText = "TSUNAMI";
+  final translator = GoogleTranslator();
+  String _translatedText = "";
+  String _selectedLanguage = "en"; // Default language is English
+
+  List<PopupMenuEntry<String>> _buildLanguageMenuItems() {
+    return [
+      PopupMenuItem<String>(
+        value: "en",
+        child: Text("English"),
+      ),
+      PopupMenuItem<String>(
+        value: "hi",
+        child: Text("Hindi"),
+      ),
+      PopupMenuItem<String>(
+        value: "mr",
+        child: Text("Marathi"),
+      ),
+    ];
+  }
+
+  Future<void> _translateText() async {
+    String textToTranslate = "";
+    setState(() {
+      textToTranslate = getTextToTranslate();
+    });
+    Translation translation =
+        await translator.translate(textToTranslate, to: _selectedLanguage);
+    setState(() {
+      _translatedText = translation.text;
+    });
+  }
+
+  String getTextToTranslate() {
+    String text = "";
+    text = headText +
+        "\n\nDO and DONT'S\n\n• You should find out if your home, school, workplace, or other frequently visited locations are in tsunami hazard areas along sea-shore.\n• Know the height of your street above sea level and the distance of your street from the coast or other high-risk waters. (Local administration may put sign boards).\n• Plan evacuation routes from your home, school, workplace, or any other place you could be where tsunamis present a risk.\n• If your children's school is in an identified inundation zone, find out what the school evacuation plan is.\n• Use a Weather Radio or stay tuned to a local radio or television station to keep informed of local watches and warnings.\n• Discuss tsunamis with your family.Everyone should know what to do in a tsunami situation. Discussing tsunamis ahead of time will help reduce fear and save precious time in an emergency. Review flood safety and preparedness measures with your family.\n• Talk to your insurance agent.Homeowners' policies may not cover flooding from a tsunami. Ask the Insurance Agent about the benefits from Multi-Hazard Insurance Schemes.\n";
+    return text;
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TSUNAMIS', style: TextStyle(fontFamily: 'Raleway')),
-        backgroundColor: Color(0xFFEE4D5F),
+        title: Text(
+          "CYCLONE",
+          style: TextStyle(fontFamily: 'Raleway'),
+        ),
+        backgroundColor: Color.fromARGB(255, 236, 171, 118),
         foregroundColor: Colors.white,
         centerTitle: true,
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFFEE4D5F), Color.fromARGB(255, 236, 171, 118)],
+        actions: <Widget>[
+          PopupMenuButton<String>(
+            icon: Icon(Icons.translate),
+            onSelected: (language) {
+              setState(() {
+                _selectedLanguage = language;
+              });
+              _translateText(); // Call _translateText() to update the translated text
+            },
+            itemBuilder: (BuildContext context) {
+              return _buildLanguageMenuItems();
+            },
           ),
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: ListView(
-          children: <Widget>[
-            Text("DO and DONT'S",
-                style: TextStyle(
-                    fontSize: 25,
-                    fontFamily: 'Raleway',
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white),
-                textAlign: TextAlign.center),
-            SizedBox(height: 20),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                    "• Build away from floodplains unless you can elevate and strengthen your house.",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white)),
-                SizedBox(height: 10),
-                Text(
-                    "• If the furnace, water heater, and electrical panel are at risk of flooding, elevate them.",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white)),
-                SizedBox(height: 10),
-                Text("• You should: in order to get ready for a flood.",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white)),
-                SizedBox(height: 10),
-                Text(
-                    "• Install 'Check Valves' in sewer traps to stop water from flooding your home's drains.",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white)),
-                SizedBox(height: 10),
-                Text(
-                    "• If you want to know if your community will build levees, beams, or floodwalls to prevent floodwater from invading your homes, get in touch with the local government.",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white)),
-                SizedBox(height: 10),
-                Text(
-                    "• To prevent seepage, use waterproofing chemicals to seal the basement walls.",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white)),
-                SizedBox(height: 20),
-                Text(
-                    "If you live in a region where flooding is likely, you should:",
-                    style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white)),
-                SizedBox(height: 20),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text("• For information, turn on the radio or television.",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Raleway',
-                            fontWeight: FontWeight.w300,
-                            color: Colors.white)),
-                    SizedBox(height: 10),
-                    Text(
-                        "• Recognize the possibility of flash flooding. Move if there's a chance of a flash flood.",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Raleway',
-                            fontWeight: FontWeight.w300,
-                            color: Colors.white)),
-                  ],
-                ),
-              ],
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color.fromARGB(255, 236, 171, 118), Color(0xFFEE4D5F)],
             ),
-          ],
+          ),
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  _translatedText.isEmpty
+                      ? getTextToTranslate()
+                      : _translatedText,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Raleway',
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

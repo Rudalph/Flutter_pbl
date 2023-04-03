@@ -7,6 +7,7 @@ class FloodScreen extends StatefulWidget {
 }
 
 class _FloodScreenState extends State<FloodScreen> {
+  String headText = "FLOOD";
   final translator = GoogleTranslator();
   String _translatedText = "";
   String _selectedLanguage = "en"; // Default language is English
@@ -42,8 +43,8 @@ class _FloodScreenState extends State<FloodScreen> {
 
   String getTextToTranslate() {
     String text = "";
-
-    text += "DO and DONT'S\n";
+    text = headText +
+        "\n\nDO and DONT'S\n\n• Build away from floodplains unless you can elevate and strengthen your house.\n• If the furnace, water heater, and electrical panel are at risk of flooding, elevate them.\n• You should: in order to get ready for a flood.\n• Install 'Check Valves' in sewer traps to stop water from flooding your home's drains.\n• If you want to know if your community will build levees, beams, or floodwalls to prevent floodwater from invading your homes, get in touch with the local government.\n• To prevent seepage, use waterproofing chemicals to seal the basement walls.\nIf you live in a region where flooding is likely, you should:\n\n• For information, turn on the radio or television.\n• Recognize the possibility of flash flooding. Move if there's a chance of a flash flood.\n";
     return text;
   }
 
@@ -52,10 +53,10 @@ class _FloodScreenState extends State<FloodScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "FLOODS",
+          "CYCLONE",
           style: TextStyle(fontFamily: 'Raleway'),
         ),
-        backgroundColor: Color(0xFFEE4D5F),
+        backgroundColor: Color.fromARGB(255, 236, 171, 118),
         foregroundColor: Colors.white,
         centerTitle: true,
         actions: <Widget>[
@@ -73,15 +74,33 @@ class _FloodScreenState extends State<FloodScreen> {
           ),
         ],
       ),
-      body: Container(
-        decoration: BoxDecoration(),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: ListView(
-          children: <Widget>[
-            Text(
-              _translatedText.isEmpty ? getTextToTranslate() : _translatedText,
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color.fromARGB(255, 236, 171, 118), Color(0xFFEE4D5F)],
             ),
-          ],
+          ),
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  _translatedText.isEmpty
+                      ? getTextToTranslate()
+                      : _translatedText,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Raleway',
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

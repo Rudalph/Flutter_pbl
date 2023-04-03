@@ -53,7 +53,7 @@ class _FloodScreenState extends State<FloodScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "CYCLONE",
+          "FLOODS",
           style: TextStyle(fontFamily: 'Raleway'),
         ),
         backgroundColor: Color.fromARGB(255, 236, 171, 118),

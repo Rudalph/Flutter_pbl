@@ -52,7 +52,7 @@ class _TsunamisScreenState extends State<TsunamisScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "CYCLONE",
+          "TSUNAMI",
           style: TextStyle(fontFamily: 'Raleway'),
         ),
         backgroundColor: Color.fromARGB(255, 236, 171, 118),

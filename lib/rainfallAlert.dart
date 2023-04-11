@@ -28,11 +28,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
     'Visakhapatnam',
     'Bhopal',
     'Patna',
-    'Ludhiana',
     'Agra',
     'Nashik',
     'Vadodara',
-    'Singapore'
   ];
 
   @override
@@ -58,7 +56,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     double temperature = weatherData['main']['temp'];
+    String Dynamic_City_value=city;
     String iconImage;
     if (weatherData != null) {
       switch (weatherData['weather'][0]['main']) {
@@ -233,9 +233,50 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         padding: EdgeInsets.all(10),
                         child: Center(
                           child: Text(
-                            temperature > 35
-                                ? "BE ALERT"
-                                : "ALERTS GENERATED ARE SEEN HERE",
+                            temperature > 40 && Dynamic_City_value=="Mumbai"
+                            ?"MUMBAI:BE ALERT TEMPREATURE IS REACHING ABOVE 40 deg cel "
+                            : temperature > 45 && Dynamic_City_value== "Delhi"
+                            ?"DELHI:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                            : temperature > 38 && Dynamic_City_value== "Bangalore"
+                            ?"BANGLORE:BE ALERT TEMPREATURE IS REACHING ABOVE 38 deg cel"
+                            : temperature > 40 && Dynamic_City_value== "Hyderabad"
+                            ?"Hyderbad:BE ALERT TEMPREATURE IS REACHING ABOVE 40 deg cel"
+                            : temperature > 45 && Dynamic_City_value== "Chennai"
+                            ?"Chennai:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                            : temperature > 45 && Dynamic_City_value== "Kolkata"
+                            ?"Kolkata:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                            : temperature > 45 && Dynamic_City_value== "Pune"
+                            ?"Pune:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                            : temperature > 50 && Dynamic_City_value== "Ahmedabad"
+                            ?"Ahmedbad:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
+                            : temperature > 50 && Dynamic_City_value== "Jaipur"
+                            ?"Jaipur:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
+                            : temperature > 45 && Dynamic_City_value== "Surat"
+                            ?"Surat:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                            : temperature > 47 && Dynamic_City_value== "Lucknow"
+                            ?"Lucknow:BE ALERT TEMPREATURE IS REACHING ABOVE 47 deg cel"
+                             : temperature > 50 && Dynamic_City_value== "Kanpur"
+                            ?"Kanpur:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
+                             : temperature > 50 && Dynamic_City_value== "Nagpur"
+                            ?"Nagpur:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
+                             : temperature > 45 && Dynamic_City_value== "Visakhapatnam"
+                            ?"Visakhapatnam:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                             : temperature > 45 && Dynamic_City_value== "Bhopal"
+                            ?"Bhopal:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                             : temperature > 45 && Dynamic_City_value== "Patna"
+                            ?"Patna:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                             : temperature > 50 && Dynamic_City_value== "Agra"
+                            ?"Agra:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
+                             : temperature > 45 && Dynamic_City_value== "Nashik"
+                            ?"Nashik:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                             : temperature > 45 && Dynamic_City_value== "Vadodara"
+                            ?"Vadodara:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
+                            :"Alerts for ${city} will be displayed here",
+
+                            
+                            // temperature > 35
+                            //     ? "BE ALERT"
+                            //     : "ALERTS GENERATED ARE SEEN HERE",
                             style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,

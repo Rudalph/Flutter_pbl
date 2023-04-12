@@ -1,4 +1,5 @@
 import 'package:dis_man_sym/DisastersScreen.dart';
+import 'package:dis_man_sym/alerts.dart';
 import 'package:dis_man_sym/rainfallAlert.dart';
 import 'package:flutter/material.dart';
 import 'DoandDontScreen.dart';
@@ -127,9 +128,9 @@ class HomeScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => alerts(
-                                        temperature: 2,
-                                      )),
+                                  builder: (context) => 
+                                        // temperature: 2,
+                                      ),
                             );
                           },
                           style: ElevatedButton.styleFrom(
@@ -207,6 +208,42 @@ class HomeScreen extends StatelessWidget {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                   builder: (context) => WeatherForecast()),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                            onPrimary: Colors.white,
+                            textStyle: TextStyle(
+                                fontSize: 20.0, fontFamily: 'Raleway'),
+                          ),
+                          icon: Icon(Icons.cloud),
+                          label: Text('Weather Forecast'),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 8.0),
+                        height: 65.0,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 255, 225, 200)
+                                  .withOpacity(0.3),
+                              Color.fromARGB(255, 255, 225, 200)
+                                  .withOpacity(0.3)
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => EmergencyContactsPage()),
                             );
                           },
                           style: ElevatedButton.styleFrom(

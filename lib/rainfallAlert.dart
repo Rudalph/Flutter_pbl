@@ -60,11 +60,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
     double temperature = weatherData['main']['temp'];
     String Dynamic_City_value=city;
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => alerts(temperature: temperature, Dynamic_City_value: Dynamic_City_value,)),
-    );
-
+   
     String iconImage;
     if (weatherData != null) {
       switch (weatherData['weather'][0]['main']) {

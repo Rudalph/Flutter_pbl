@@ -3,7 +3,6 @@ import 'package:dis_man_sym/alerts.dart';
 import 'package:dis_man_sym/rainfallAlert.dart';
 import 'package:flutter/material.dart';
 import 'DoandDontScreen.dart';
-import 'alerts.dart';
 import 'weatherforecast.dart';
 import 'splashScreen.dart';
 
@@ -127,10 +126,7 @@ class HomeScreen extends StatelessWidget {
                         child: ElevatedButton.icon(
                           onPressed: () {
                             Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) =>alerts()
-                                        
-                                      ),
+                              MaterialPageRoute(builder: (context) => alerts()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
@@ -244,7 +240,7 @@ class HomeScreen extends StatelessWidget {
                     //     //     Navigator.of(context).push(
                     //     //       MaterialPageRoute(
                     //     //           builder: (context) => alerts(
-                          
+
                     //     //           )),
                     //     //     );
                     //     //   },

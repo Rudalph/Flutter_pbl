@@ -140,8 +140,8 @@ class HomeScreen extends StatelessWidget {
                             textStyle: TextStyle(
                                 fontSize: 20.0, fontFamily: 'Raleway'),
                           ),
-                          icon: Icon(Icons.notification_important),
-                          label: Text("Alert"),
+                          icon: Icon(Icons.call),
+                          label: Text("Helpline"),
                         ),
                       ),
                     ),

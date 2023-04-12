@@ -101,7 +101,14 @@ class alerts extends StatelessWidget {
     {'name': 'National Disaster Response Force', 'number': '1070'},
     {'name': 'National Emergency Response Center', 'number': '112'},
     {'name': 'State Disaster Management Authority', 'number': '108'},
-    // Add more contacts here
+    {'name': 'NATIONAL EMERGENCY NUMBER', 'number': '112'},
+    {'name': 'Disaster Management Services', 'number': '108'},
+    {'name': 'Air Ambulance', 'number': '9540161344'},
+    {'name': 'NDRF HEADQUATERS', 'number': '011-24363260'},
+
+
+
+    
   ];
 
   @override

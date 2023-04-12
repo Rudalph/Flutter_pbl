@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 class alerts extends StatelessWidget {
   final double temperature;
-  const alerts({required this.temperature});
+  final String Dynamic_City_value;
+  const alerts({required this.temperature, required , required this.Dynamic_City_value});
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -41,7 +43,7 @@ class alerts extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             
-                            Text("${temperature}")
+                            Text("${temperature} and ${Dynamic_City_value}")
                             // Text("CONTACT NUBERS",style: TextStyle(
                             //   fontSize: 20,
                             //   fontWeight: FontWeight.w300,

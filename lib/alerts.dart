@@ -41,10 +41,11 @@ class alerts extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             
-                            Text("CONTACT NUBERS",style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w300,
-                            ),),
+                            Text("${temperature}")
+                            // Text("CONTACT NUBERS",style: TextStyle(
+                            //   fontSize: 20,
+                            //   fontWeight: FontWeight.w300,
+                            // ),),
                             
                           ],
                         )

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:dis_man_sym/alerts.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -59,6 +60,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
     double temperature = weatherData['main']['temp'];
     String Dynamic_City_value=city;
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => alerts(temperature: temperature,)),
+    );
+
     String iconImage;
     if (weatherData != null) {
       switch (weatherData['weather'][0]['main']) {

@@ -1,5 +1,7 @@
 import 'package:dis_man_sym/DOandDonts/helpline.dart';
  import 'package:flutter/material.dart';
+ import 'package:url_launcher/url_launcher.dart';
+
 
 // class alerts extends StatelessWidget {
 //   // final double temperature;
@@ -94,7 +96,7 @@ import 'package:dis_man_sym/DOandDonts/helpline.dart';
 // }
 
 
-class EmergencyContactsPage extends StatelessWidget {
+class alerts extends StatelessWidget {
   final List<Map<String, String>> contacts = [
     {'name': 'National Disaster Response Force', 'number': '1070'},
     {'name': 'National Emergency Response Center', 'number': '112'},
@@ -115,7 +117,7 @@ class EmergencyContactsPage extends StatelessWidget {
             title: Text(contacts[index]['name']!),
             subtitle: Text(contacts[index]['number']!),
             onTap: () {
-             // launch('tel:${contacts[index]['number']}');
+              launch('tel:${contacts[index]['number']}');
             },
           );
         },
@@ -123,3 +125,4 @@ class EmergencyContactsPage extends StatelessWidget {
     );
   }
 }
+

@@ -264,11 +264,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               ),
                             ),
                             SizedBox(height: 20),
+                            Text(
+                              'Pressure:${weatherData['main']['pressure']}',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
                           ],
                         ),
                       ),
                     ),
-
                     Container(
                       height: 20,
                     ),

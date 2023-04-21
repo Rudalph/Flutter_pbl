@@ -174,101 +174,101 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      '${weatherData['weather'][0]['description'][0].toUpperCase()}${weatherData['weather'][0]['description'].substring(1)}',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    weatherData['rain'] != null
-                        ? Column(
-                            children: [
-                              Text(
-                                'Precipitation: ${weatherData['rain']['1h']}mm',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontFamily: 'Raleway',
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.white,
-                                ),
+                    Container(
+                      height: 100,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '${weatherData['weather'][0]['description'][0].toUpperCase()}${weatherData['weather'][0]['description'].substring(1)}',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
                               ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                'Wind speed: ${weatherData['wind']['speed']} m s',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontFamily: 'Raleway',
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          )
-                        : Text(
-                            'Wind speed: ${weatherData['wind']['speed']} m s',
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontFamily: 'Raleway',
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white,
                             ),
-                          ),
-                    Container(
-                      height: 20,
-                    ),
-                    Text(
-                      'Wind Deg:${weatherData['wind']['deg']}',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
+                            SizedBox(height: 20),
+                            weatherData['rain'] != null
+                                ? Column(
+                                    children: [
+                                      Text(
+                                        'Precipitation: ${weatherData['rain']['1h']}mm',
+                                        style: TextStyle(
+                                          fontSize: 25,
+                                          fontFamily: 'Raleway',
+                                          fontWeight: FontWeight.w300,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      SizedBox(height: 20),
+                                      Text(
+                                        'Wind speed: ${weatherData['wind']['speed']} m s',
+                                        style: TextStyle(
+                                          fontSize: 25,
+                                          fontFamily: 'Raleway',
+                                          fontWeight: FontWeight.w300,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                : Text(
+                                    'Wind speed: ${weatherData['wind']['speed']} m s',
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      fontFamily: 'Raleway',
+                                      fontWeight: FontWeight.w300,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Wind Deg:${weatherData['wind']['deg']}',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Humidity:${weatherData['main']['humidity']}',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Latitude:${weatherData['coord']['lat']}',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Longitude:${weatherData['coord']['lon']}',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Humidity:${weatherData['main']['humidity']}',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Container(
-                      height: 20,
-                    ),
-                    Text(
-                      'Latitude:${weatherData['coord']['lat']}',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Container(
-                      height: 20,
-                    ),
-                    Text(
-                      'Longitude:${weatherData['coord']['lon']}',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                      ),
-                    ),
+
                     Container(
                       height: 20,
                     ),

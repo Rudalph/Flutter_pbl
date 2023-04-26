@@ -44,7 +44,7 @@ class _DroughtScreenState extends State<DroughtScreen> {
   String getTextToTranslate() {
     String text = "";
     text = headText +
-        "\n\nDO and DONT'S\n\n• Listen to radio, watch TV and read newspapers for warnings, updates and instructions.\n• Excavate deep pits to help increase groundwater table.\n• Encouragement of afforestation with subabul, seemaruba, casurina, and eucalyptus.\n• Use wet clothes to clean and scrub floors instead of using running water.\n• Do not mess with traditional water sources such as ponds, annicuts, well,tanks, etc.\n• Do not waste rainwater collected on rooftops, etc. \n• Put used domestic water to use by watering grasses and plants.\n• Do not cut trees and forests and do not waste water.\n";
+        "\n\nDO and DONT'S\n\n• Listen to radio, watch TV and read newspapers for warnings, updates and instructions.\n• Excavate deep pits to help increase groundwater table.\n• Encouragement of afforestation with subabul, seemaruba, casurina, and eucalyptus.\n• Use wet clothes to clean and scrub floors instead of using running water.\n• Do not mess with traditional water sources such as ponds, annicuts, well,tanks, etc.\n• Do not waste rainwater collected on rooftops, etc. \n• Put used domestic water to use by watering grasses and plants.\n• Do not cut trees and forests and do not waste water.\n• Use wet clothes to clean and scrub floors instead of using running water.\n• Do not mess with traditional water sources such as ponds, annicuts, well,tanks, etc.\n• Do not waste rainwater collected on rooftops, etc. \n• Put used domestic water to use by watering grasses and plants.\n• Do not cut trees and forests and do not waste water.\n";
     return text;
   }
 

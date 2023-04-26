@@ -32,6 +32,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
     'Agra',
     'Nashik',
     'Vadodara',
+    'Singapore',
+    'Moscow'
   ];
 
   @override
@@ -192,6 +194,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             SizedBox(height: 20),
                             weatherData['rain'] != null
                                 ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Precipitation: ${weatherData['rain']['1h']}mm',
@@ -225,7 +229,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                   ),
                             SizedBox(height: 20),
                             Text(
-                              'Wind Deg:${weatherData['wind']['deg']}',
+                              'Wind Deg:${weatherData['wind']['deg']}°',
                               style: TextStyle(
                                 fontSize: 25,
                                 fontFamily: 'Raleway',
@@ -235,7 +239,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             ),
                             SizedBox(height: 20),
                             Text(
-                              'Humidity:${weatherData['main']['humidity']}',
+                              'Humidity:${weatherData['main']['humidity']}g/cu m',
                               style: TextStyle(
                                 fontSize: 25,
                                 fontFamily: 'Raleway',
@@ -245,7 +249,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             ),
                             SizedBox(height: 20),
                             Text(
-                              'Latitude:${weatherData['coord']['lat']}',
+                              'Feels Like:${weatherData['main']['feels_like']}°C',
                               style: TextStyle(
                                 fontSize: 25,
                                 fontFamily: 'Raleway',
@@ -255,7 +259,47 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             ),
                             SizedBox(height: 20),
                             Text(
-                              'Longitude:${weatherData['coord']['lon']}',
+                              'Temp min:${weatherData['main']['temp_min']}°C',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Temp max:${weatherData['main']['temp_max']}°C',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Visiblity:${weatherData['visibility'] / 1000}km',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Latitude:${weatherData['coord']['lat']}°',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Longitude:${weatherData['coord']['lon']}°',
                               style: TextStyle(
                                 fontSize: 25,
                                 fontFamily: 'Raleway',
